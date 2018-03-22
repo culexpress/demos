@@ -1,10 +1,6 @@
-# Web Bluetooth Printer
+# Web Bluetooth Scale
 
-Available at https://webbluetoothcg.github.io/demos/bluetooth-printer/
-
-<img src="https://raw.githubusercontent.com/webbluetoothcg/demos/gh-pages/bluetooth-printer/printer.jpg">
-
-This web app demonstrates the use of the Web Bluetooth API for printing to a BLE printer.
+This web app demonstrates the use of the Web Bluetooth API for reading weight from a BLE scale.
 
 ## Dependencies
 * Bluetooth scale: http://www.amazon.com/Version-AGPtek%C2%AE-Portable-Bluetooth-Wireless/dp/B00XL3DY2E
@@ -16,8 +12,7 @@ This web app demonstrates the use of the Web Bluetooth API for printing to a BLE
 * Host the app on your web server.
 * Confirm the Web Bluetooth implementation status: https://github.com/WebBluetoothCG/web-bluetooth/blob/gh-pages/implementation-status.md
 * Load the web app in a Chrome browser.
-* Switch on the printer and press the power button until the power LED is blue.
-* Enter a message on the web app.
+* Switch on the scale and press the power button until the power LED is blue.
 * Click on the "Read weight" button to read weight from the bluetooth scale.
 
 ## References and How to report bugs
