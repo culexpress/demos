@@ -7,7 +7,7 @@ Available at https://webbluetoothcg.github.io/demos/bluetooth-printer/
 This web app demonstrates the use of the Web Bluetooth API for printing to a BLE printer.
 
 ## Dependencies
-* Bluetooth printer: http://www.amazon.com/Version-AGPtek%C2%AE-Portable-Bluetooth-Wireless/dp/B00XL3DY2E
+* Bluetooth scale: http://www.amazon.com/Version-AGPtek%C2%AE-Portable-Bluetooth-Wireless/dp/B00XL3DY2E
 * ChromeOS 48 with Web Bluetooth API enabled: https://developers.google.com/web/updates/2015/07/interact-with-ble-devices-on-the-web?hl=en
 * Bower: http://bower.io/
 
@@ -18,7 +18,7 @@ This web app demonstrates the use of the Web Bluetooth API for printing to a BLE
 * Load the web app in a Chrome browser.
 * Switch on the printer and press the power button until the power LED is blue.
 * Enter a message on the web app.
-* Click on the "Print" button to print the image and message.
+* Click on the "Read weight" button to read weight from the bluetooth scale.
 
 ## References and How to report bugs
 * Web Bluetooth API: https://webbluetoothcg.github.io/web-bluetooth/
