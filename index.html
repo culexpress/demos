@@ -117,7 +117,8 @@ limitations under the License.
       <paper-card>
         <div class="card-content">
           <!-- <paper-button id="print" raised class="colorful">Print</paper-button> -->
-          <paper-button id="read" raised class="colorful">Read Weight</paper-button>
+          <paper-button id="read" raised class="colorful">Read Weight Via Bluetooth</paper-button>
+          <paper-button id="usb" raised class="colorful">Read Weight Via USB</paper-button>
         </div>
       </paper-card>
 
@@ -129,7 +130,17 @@ limitations under the License.
 
     <script>
       'use strict';
+      document.addEventListener('DOMContentLoaded', async () => {
+        console.log("DOMContentLoaded");
+        let devices = await navigator.usb.getDevices();
+        devices.forEach(device => {
+          console.log(device.vendorId);
+          console.log(device.productName);
+        });
+      });
+
       document.addEventListener('WebComponentsReady', function() {
+        console.log("WebComponentsReady");
         let progress = document.querySelector('#progress');
         let dialog = document.querySelector('#dialog');
         let message = document.querySelector('#message');
@@ -304,6 +315,29 @@ limitations under the License.
         function readWeight(resolve, reject) {
           message.innerHTML = scaleCharacteristic.readValue();
         }
+        
+        let usbButton = document.querySelector('#usb');
+
+        usbButton.addEventListener('click', async () => {
+          console.log("usb clicked");
+
+          let device;
+          try {
+            device = await navigator.usb.requestDevice({ filters: [{
+                vendorId: 0x10C4
+                // productId: 0xEA60
+            }]});
+          } catch (err) {
+            // No device was selected.
+          }
+
+          if (device !== undefined) {
+            // Add |device| to the UI.
+            console.log(device.vendorId);
+            console.log(device.productName);
+          }
+        });
+
       });
     </script>
   </body>
